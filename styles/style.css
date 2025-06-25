@@ -1,0 +1,1094 @@
+:root {
+  --logo-font: "Edwardian Script ITC";
+  --color-primary: rgba(2, 48, 232, 0.99);
+  --black: rgb(24, 24, 24);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* color: white; */
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--black);
+  font-family: "poppins";
+  position: relative;
+  overflow-x: hidden;
+  color: white;
+}
+
+@media (min-width: 200px) {
+  .warning-container {
+    position: absolute;
+    top: 5.5rem;
+    right: 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid gray;
+    background-color: white;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    z-index: 999;
+    transform: translateX(150%);
+    transition-duration: 2s;
+  }
+
+  .warning-container.success {
+    transform: translateX(0%);
+    animation: slide 0.5s linear;
+  }
+  .warning-container p {
+    color: black;
+    font-size: 13px;
+  }
+
+  .flex-box {
+    display: flex;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .flex-row {
+    flex-direction: row;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .content-center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-space {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .gap-1 {
+    gap: 1rem;
+  }
+
+  .full-screen {
+    height: 78vh;
+  }
+
+  /* -----------------------------------nav css starts from here-------------------------------- */
+
+  nav {
+    padding: 1rem 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(106, 106, 106);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgb(27, 27, 27);
+  }
+
+  nav input {
+    margin: 0;
+  }
+
+  .menu-icon {
+    background-color: rgb(55, 55, 247);
+    border-radius: 0px 20px 20px 0px;
+    position: absolute;
+    left: -3px;
+    bottom: 8px;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .close-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgb(55, 55, 247);
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .nav-container {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.573);
+    backdrop-filter: blur(20px);
+    width: 250px;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition-duration: 0.5s;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .nav-container.open {
+    transform: translateX(0%);
+  }
+
+  .logo {
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+  }
+
+  .logo span {
+    font-size: 30px;
+    color: white;
+    font-family: var(--logo-font);
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .user {
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .nav-links,
+  a {
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(214, 214, 214);
+  }
+
+  .box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .icon {
+    font-size: 28px;
+  }
+
+  .logout-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(178, 35, 35);
+    transition: 0.5s;
+  }
+
+  .logout-btn i {
+    margin-right: 2px;
+  }
+
+  .logout-btn:hover {
+    background-color: red;
+  }
+
+  .nav-links .link:hover {
+    background-color: var(--color-primary);
+    color: rgb(205, 205, 205);
+  }
+
+  /* ---------------------------nav css ends here ---------------------------------------------- */
+
+  /* --------------------------- form css starts here -------------------------- */
+
+  .form {
+    max-width: 500px;
+    width: 100%;
+    gap: 10px;
+    border: 2px solid rgb(132, 132, 132);
+    border-radius: 5px;
+    padding: 1rem;
+  }
+
+  .form-title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 0.5rem 0.6rem;
+    outline: none;
+    border: none;
+    background-color: rgba(170, 170, 170, 0.267);
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    color: rgb(221, 221, 221);
+    border-radius: 5px;
+  }
+
+  option {
+    color: black;
+  }
+
+  select {
+    appearance: none;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgb(170, 170, 170);
+  }
+
+  textarea {
+    font-family: "poppins";
+  }
+
+  .form div a {
+    font-size: 15px;
+  }
+
+  .form div a:hover {
+    color: var(--color-primary);
+  }
+
+  .btn {
+    padding: 0.5rem;
+    background-color: rgb(55, 55, 247);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: var(--color-primary);
+  }
+
+  /* -------------------------------form css ends here------------------------------ */
+
+  /* -------------------------------index css starts from here ------------------------------------- */
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0rem;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    gap: 2rem;
+    min-height: 100vh;
+  }
+
+  .post-container {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border: 1px solid gray;
+    border-radius: 15px;
+    position: relative;
+  }
+
+  .post-img {
+    width: 100%;
+    /* height: 100%; */
+    height: 300px;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    background-color: green;
+  }
+
+  .post-img img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .post-content {
+    padding: 5px;
+    bottom: 0;
+    left: 0;
+    height: 150px;
+    gap: 0.2rem;
+  }
+
+  .post-title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .post-description {
+    font-size: 13px;
+    color: rgb(187, 187, 187);
+  }
+
+  /* .post-container:hover .post-content{
+    transform: translateY(50%);
+} */
+
+  .post-btns {
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .post-btns * {
+    width: 80px;
+  }
+
+  /* ------------------------------------------pagination css starts here --------------------------------- */
+  .pagination {
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    gap: 0.2rem;
+  }
+
+  .pagination .btn {
+    width: 50px;
+    background-color: transparent;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .page-btn-text {
+    display: none;
+  }
+
+  .arrow-icon {
+    font-size: 25px;
+  }
+
+  .pagination .btn:hover {
+    background-color: var(--color-primary);
+  }
+
+  .pagination .page_btn {
+    /* background-color: transparent; */
+    color: white;
+    outline: none;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .pagination .page_buttons {
+    /* background-color: red; */
+    padding: 5px;
+  }
+
+  .pagination .page_buttons a {
+    padding: 5px;
+    background-color: rgba(87, 87, 87, 0.499);
+    color: black;
+  }
+
+  .pagination a.active {
+    background-color: blue;
+    border: none;
+  }
+  /* -----------------view page------------------ */
+  .main-container {
+    min-height: 100vh;
+  }
+
+  .post-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-box {
+    width: 100%;
+    flex: 1;
+    display: flex;
+  }
+
+  .content-box {
+    flex: 1;
+    padding: 1rem;
+    background-color: rgba(49, 49, 49, 0.932);
+  }
+
+  .title-box {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgb(189, 189, 189);
+  }
+
+  .title {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .post-details {
+    text-align: right;
+    font-size: 14px;
+  }
+
+  .content {
+    padding: 0.5rem 0rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 15px;
+  }
+
+  .img-box img {
+    height: 100%;
+    width: 100%;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgba(29, 29, 29, 0.825);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: 2px;
+    background-color: rgb(65, 65, 65);
+    border-radius: 10px;
+  }
+  .border {
+    border: 2px solid red;
+  }
+  /* ---------admin panel css--------- */
+  .main-wrapper {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  .side-navbar {
+    justify-content: space;
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-height: 100vh;
+    width: 250px;
+    transform: translateX(-100%);
+    transition-duration: 0.5s;
+    background-color: rgb(27, 27, 27);
+    border-right: 2px solid rgb(106, 106, 106);
+  }
+
+  .side-navbar .menu-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -30px;
+    top: 0;
+    background-color: rgb(56, 56, 56);
+    border-radius: 0px 50px 50px 0;
+    font-size: 20px;
+    transition-duration: 0.5s;
+  }
+
+  .side-navbar.open {
+    transform: translateX(0%);
+  }
+
+  .side-navbar.open .menu-btn span {
+    transform: rotate(180deg);
+  }
+
+  .users-profile {
+    height: 180px;
+    margin: 0;
+    background-color: rgba(69, 69, 69, 0.633);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .nav-elements {
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .nav-elements .navlinks {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    font-weight: 500;
+  }
+
+  .admin-logout {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0rem;
+  }
+
+  .nav-elements .navlinks:hover {
+    background-color: rgb(87, 87, 87);
+  }
+
+  .navlinks.active {
+    background-color: rgba(150, 150, 150, 0.7);
+  }
+
+  /* .navlinks.active>a{
+    color: black;
+} */
+
+  .main-section {
+    width: 100%;
+  }
+
+  .header {
+    width: 100%;
+    padding: 1.5rem 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid gray;
+  }
+
+  .Add_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(0, 94, 255);
+    border-radius: 50px;
+  }
+
+  .Add_button .btn {
+    display: block;
+    font-size: 25px;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .search-form .logo {
+    display: none;
+  }
+
+  form {
+    display: flex;
+    gap: 5px;
+  }
+
+  .search-form form input {
+    margin: 0;
+  }
+
+  .search-form form .btn {
+    max-width: 100px;
+  }
+
+  .admin-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 0rem;
+  }
+
+  .table-container {
+    width: 100%;
+    max-height: 440px;
+    height: 100%;
+    overflow-x: auto;
+    /* background-color: red; */
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+    border: none;
+  }
+
+  th,
+  td {
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    min-height: 500px;
+    text-wrap: nowrap;
+    /* border-bottom: 1px solid gray; */
+  }
+
+  tr:hover {
+    background-color: rgba(47, 47, 47, 0.815);
+  }
+
+  th {
+    background-color: #1f2937;
+    color: white;
+  }
+
+  .action-btn {
+    padding: 4px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 22px;
+  }
+
+  .view-btn {
+    background-color: rgb(6, 204, 6);
+  }
+
+  .edit-btn {
+    background-color: #3b82f6;
+    margin: 0rem 0.5rem;
+  }
+
+  .delete-btn {
+    background-color: #ef4444;
+  }
+
+  .edit-btn:hover {
+    background-color: #2563eb;
+  }
+
+  .delete-btn:hover {
+    background-color: #dc2626;
+  }
+
+  .view-btn:hover {
+    background-color: rgb(1, 173, 1);
+  }
+}
+
+@media (min-width: 420px) {
+  .nav-links {
+    padding: 1rem 0.8rem;
+  }
+
+  .user {
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 0.6rem 0.8rem;
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 0.6rem;
+    font-size: 16px;
+  }
+
+  .post-title {
+    font-size: 20px;
+  }
+
+  .post-description {
+    font-size: 14px;
+  }
+
+  .header {
+    padding: 1.5rem 1rem;
+  }
+
+  .Add_button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 760px) {
+  /* -------------nav bar css------------*/
+  nav {
+    padding: 14px 1rem;
+    flex-direction: row;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .close-icon {
+    display: none;
+  }
+
+  .nav-container {
+    position: relative;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    max-width: 280px;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0%);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .logo {
+    padding: 0;
+    border: none;
+  }
+
+  .logo span {
+    font-size: 22px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .icon {
+    font-size: 25px;
+  }
+
+  .icon-text {
+    font-size: 14px;
+    position: absolute;
+    top: 45px;
+    display: none;
+    transition-duration: 0.3s;
+    padding: 0.5rem 1rem;
+    background-color: rgb(64, 64, 64);
+    border-radius: 3px;
+    text-wrap: nowrap;
+    animation: slideup 0.5s;
+  }
+
+  a:hover .icon-text {
+    display: inline;
+  }
+
+  .icon-text::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 1.2rem;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    background-color: rgb(64, 64, 64);
+  }
+
+  @keyframes slideup {
+    0% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  .user {
+    font-weight: 300;
+    font-size: 13px;
+  }
+  /* ---------------form css---------------- */
+  input,
+  textarea,
+  select {
+    padding: 0.5rem 0.6rem;
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 0.5rem;
+    font-size: 14px;
+  }
+
+  /* ---------index css---------- */
+  .container {
+    padding: 1rem 0rem;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-container {
+    min-height: 90svh;
+    /* background-color: red; */
+  }
+
+  .post-box {
+    max-width: 750px;
+    width: 100%;
+    height: 420px;
+    flex-direction: row;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .content {
+    height: 230px;
+  }
+
+  .search-form {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  .search-form .logo {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    padding: 1.5rem 5rem;
+  }
+
+  .nav-container {
+    max-width: 350px;
+  }
+
+  .logo span {
+    font-size: 30px;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .user {
+    font-size: 15px;
+  }
+
+  .icon {
+    font-size: 28px;
+  }
+
+  .form-title {
+    font-size: 2rem;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 0.7rem 0.8rem;
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 0.6rem;
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 2rem 0rem;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .post-title {
+    font-size: 20px;
+  }
+
+  .post-description {
+    font-size: 15px;
+    color: rgb(187, 187, 187);
+  }
+
+  .pagination {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .pagination .btn {
+    width: 100px;
+    padding: 0.4rem 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .arrow-icon {
+    font-size: 16px;
+  }
+
+  .page-btn-text {
+    display: inline;
+  }
+
+  .post-box {
+    max-width: 850px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  .search-form {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-container {
+    max-width: 500px;
+  }
+
+  .logo span {
+    font-size: 32px;
+  }
+
+  .nav-links {
+    gap: 2rem;
+  }
+
+  .side-navbar {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    transform: translateX(0%);
+  }
+
+   .side-navbar .menu-btn {
+   display: none;
+  }
+
+  
+  .nav-elements {
+    height: 65%;
+  }
+
+  .search-form {
+    max-width: 700px;
+  }
+
+  .search-form input {
+    width: 280px;
+  }
+
+  .table-container {
+    width: 100%;
+    max-height: 450px;
+    height: 100%;
+    /* background-color: red; */
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+    border: none;
+  }
+
+  th,
+  td {
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    min-height: 500px;
+    /* border-bottom: 1px solid gray; */
+  }
+
+  tr:hover {
+    background-color: rgba(47, 47, 47, 0.815);
+  }
+
+  th {
+    background-color: #1f2937;
+    color: white;
+  }
+
+  .action-btn {
+    padding: 4px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 22px;
+  }
+
+  .view-btn {
+    background-color: rgb(6, 204, 6);
+  }
+
+  .edit-btn {
+    background-color: #3b82f6;
+    margin: 0rem 0.5rem;
+  }
+
+  .delete-btn {
+    background-color: #ef4444;
+  }
+
+  .edit-btn:hover {
+    background-color: #2563eb;
+  }
+
+  .delete-btn:hover {
+    background-color: #dc2626;
+  }
+
+  .view-btn:hover {
+    background-color: rgb(1, 173, 1);
+  }
+}
